@@ -5,12 +5,7 @@ function App() {
   const [location, setLocation] = useState(false);
   const [weather, setWeather] = useState(false);
 
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      getWeather(position.coords.latitude, position.coords.longitude);
-      setLocation(true);
-    })
-  }, []);
+  
 
   const apiKey = process.env.REACT_APP_OPEN_WEATHER_API_KEY;
 
@@ -31,6 +26,15 @@ function App() {
       console.error('Erro ao buscar dados meteorológicos:', error);
     }
   }
+  
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log('Latitude:', position.coords.latitude);
+      console.log('Longitude:', position.coords.longitude);
+      getWeather(position.coords.latitude, position.coords.longitude);
+      setLocation(true);
+    })
+  }, []);
 
   if (!location) {
     return (
@@ -47,14 +51,16 @@ function App() {
   } else {
     return (
       <Fragment>
-        <h3>Clima nas suas Coordenadas ({weather.weather[0].description})</h3>
+        <h3>Clima nas suas Coordenadas
+          ({weather['weather'][0]['description']})
+        </h3>
         <hr />
         <ul>
-          <li>Temperatura atual: {weather.main.temp}°</li>
-          <li>Temperatura máxima: {weather.main.temp_max}°</li>
-          <li>Temperatura mínima: {weather.main.temp_min}°</li>
-          <li>Pressão: {weather.main.pressure} hpa</li>
-          <li>Umidade: {weather.main.humidity}%</li>
+          <li>Temperatura atual: {weather['main']['temp']}°</li>
+          <li>Temperatura máxima: {weather['main']['temp_max']}°</li>
+          <li>Temperatura minima: {weather['main']['temp_min']}°</li>
+          <li>Pressão: {weather['main']['pressure']} hpa</li>
+          <li>Umidade: {weather['main']['humidity']}%</li>
         </ul>
       </Fragment>
     );
