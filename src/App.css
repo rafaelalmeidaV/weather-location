@@ -13,16 +13,69 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  background: linear-gradient(to bottom, #23759c 70%, #5f8ca3 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* Outras propriedades de estilo, como largura e altura, podem ser adicionadas aqui */
 }
+
+.container {
+  background-color: rgba(255, 255, 255, 0.103);
+  color: #f1f1f1;
+  height: 490px;
+  width: 800px;
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 20px;
+  box-shadow: grey 0px 0px 10px 0px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.hContainer {
+  margin-top: 10%;
+}
+
+.containerIcon {
+  margin-top: 50%;
+  margin-left: 6%;
+}
+.h1Text {
+  font-size: 40px;
+  font-family: 'Tahoma';
+  text-transform: uppercase;
+  margin: 0; /* Remova a margem padrão */
+  padding: 0; /* Remova o preenchimento padrão */
+  color: #f1f1f1;
+}
+
+.h3Text {
+  font-size: 20px;
+  font-family: 'Tahoma';
+  text-transform: uppercase;
+  margin: 0; /* Remova a margem padrão */
+  padding: 0; /* Remova o preenchimento padrão */
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.h3TextLegend {
+  font-size: 20px;
+  font-family: 'Tahoma';
+  text-transform: uppercase; 
+  padding: 0; /* Remova o preenchimento padrão */
+  color: #f1f1f1;
+}
+
+
+.temp_c {
+  font-size: 100px;
+  font-family: 'tahoma';
+  text-transform: uppercase;
+  padding-right: 25%;
+}
+
 
 .App-link {
   color: #61dafb;
